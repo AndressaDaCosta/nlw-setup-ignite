@@ -33,6 +33,11 @@ This project was developed using the following technologies:
 -   [ReactJS](https://reactjs.org/)
 -   [TailwindCSS](https://tailwindcss.com/)
 -   [React Native](https://reactnative.dev/)
+-   [React Native SVG](https://docs.expo.dev/versions/latest/sdk/svg/)
+-   [SVG Transformer](https://github.com/kristerkari/react-native-svg-transformer)
+-   [Phosphor-icons](https://...)
+-   [vector-icons](https://...)
+
 -   [Expo](https://expo.io/)
 
 ## 🧪 SOLID
