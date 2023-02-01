@@ -1,4 +1,4 @@
-import { Check } from "phosphor-react";
+import { Check } from 'phosphor-react';
 
 export function NewHabitForm() {
 	return (
@@ -6,7 +6,7 @@ export function NewHabitForm() {
 			<label
 				htmlFor="title"
 				className="font-semibold leading-tight">
-				Qual seu comprometimento?
+				Qual o seu comprometimento?
 			</label>
 
 			<input
@@ -20,7 +20,7 @@ export function NewHabitForm() {
 			<label
 				htmlFor=""
 				className="font-semibold leading-tight mt-4">
-				Qual a recorrência?
+				Qual a sua recorrência?
 			</label>
 
 			<button
