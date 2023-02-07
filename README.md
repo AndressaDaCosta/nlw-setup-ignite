@@ -67,7 +67,11 @@ Principles:
         -   [Console Ninja](https://marketplace.visualstudio.com/items?itemName=WallabyJs.console-ninja)
 
 -   **Navegador**
+
     -   JSON Viewer
+
+-   **Link**
+    -   [Notion](https://www.notion.so/Trilha-Ignite-76de404aef5e41b28fbbb39e16704916)
 
 ## 💻 Projeto
 
