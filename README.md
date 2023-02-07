@@ -1,7 +1,10 @@
-<h1 align="center"> Habits </h1>
+<!-- <div align="center"> <img src=".github/logo.svg"> </div> -->
+<div align="center"> <img width="300" src=".github/onestep.png"></div>
+
+#
 
 <p align="center">
-NLW Setup - Rocketseat. <br/>
+ NLW Setup Ignite <img width="15" src=".github/ignite-logo.png"> - Rocketseat 🚀 <br/>
 </p>
 
 <p align="center">
@@ -12,7 +15,7 @@ NLW Setup - Rocketseat. <br/>
 </p>
 
 <p align="center">
-  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=8F5FF2&labelColor=000000">
 </p>
 
 <br>
@@ -124,4 +127,4 @@ Remembering that you need to have a [Figma](http://figma.com/) account to access
 
 ---
 
-Feito com ♥ by Rocketseat :wave: [Participe da nossa comunidade!](https://discord.gg/rocketseat)
+Feito com ♥ by Rocketseat 🚀 [Participe da nossa comunidade!](https://discord.gg/rocketseat)
