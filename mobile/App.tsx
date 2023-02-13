@@ -1,5 +1,6 @@
 import './src/lib/dayjs'
 import { StatusBar, Button } from 'react-native'
+import { useEffect } from 'react'
 
 import {
 	useFonts,
@@ -21,7 +22,13 @@ export default function App() {
 		Inter_800ExtraBold
 	})
 
-	async function scheduleNotifications() {
+	async function schedulePushNotifications() {
+		const schedule = await Notifications.getAllScheduledNotificationsAsync()
+		console.log('Agendadas: ', schedule)
+
+		if (schedule.length > 0) {
+			await Notifications.cancelAllScheduledNotificationsAsync()
+		}
 		const trigger = new Date(Date.now())
 		trigger.setMinutes(trigger.getMinutes() + 1)
 
@@ -34,20 +41,20 @@ export default function App() {
 		})
 	}
 
+	useEffect(() => {
+		schedulePushNotifications()
+	}, [])
+
 	if (!fontsLoaded) {
 		return <Loading />
 	}
 	return (
 		<>
-			<Button
-				title="enviar"
-				onPress={scheduleNotifications}
-			/>
 			<Routes />
 			<StatusBar
 				barStyle="light-content"
 				backgroundColor="transparent"
-				// translucent
+				translucent
 			/>
 		</>
 	)
