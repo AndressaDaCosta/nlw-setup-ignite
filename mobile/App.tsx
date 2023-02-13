@@ -1,5 +1,5 @@
 import './src/lib/dayjs'
-import { StatusBar, Button } from 'react-native'
+import { StatusBar } from 'react-native'
 import { useEffect } from 'react'
 
 import {
@@ -14,6 +14,14 @@ import * as Notifications from 'expo-notifications'
 import { Loading } from './src/components/Loading'
 import { Routes } from './src/routes'
 
+Notifications.setNotificationHandler({
+	handleNotification: async () => ({
+		shouldShowAlert: true,
+		shouldPlaySound: true,
+		shouldSetBadge: false
+	})
+})
+
 export default function App() {
 	const [fontsLoaded] = useFonts({
 		Inter_400Regular,
@@ -26,11 +34,13 @@ export default function App() {
 		const schedule = await Notifications.getAllScheduledNotificationsAsync()
 		console.log('Agendadas: ', schedule)
 
-		if (schedule.length > 0) {
+		if (schedule.length >= 0) {
 			await Notifications.cancelAllScheduledNotificationsAsync()
 		}
 		const trigger = new Date(Date.now())
-		trigger.setMinutes(trigger.getMinutes() + 1)
+		// trigger.setMinutes(trigger.getMinutes() + 1)
+		trigger.setHours(trigger.getHours() + 5)
+		trigger.setSeconds(0)
 
 		await Notifications.scheduleNotificationAsync({
 			content: {
@@ -50,6 +60,10 @@ export default function App() {
 	}
 	return (
 		<>
+			{/* <Button
+				title="Notificar"
+				onPress={schedulePushNotifications}
+			/> */}
 			<Routes />
 			<StatusBar
 				barStyle="light-content"
