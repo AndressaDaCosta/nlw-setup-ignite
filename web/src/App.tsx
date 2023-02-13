@@ -2,13 +2,38 @@ import './styles/global.css'
 import './lib/dayjs'
 import { Header } from './components/Header'
 import { SummaryTable } from './components/SummaryTable'
+import { api } from './lib/axios'
 
 // Local Notification => Scheduling/ App fechado  (services workers)
-window.Notification.requestPermission((Permission) => {
+/*window.Notification.requestPermission((Permission) => {
 	new window.Notification('Habits', {
 		body: 'Texto'
 	})
 })
+*/
+
+navigator.serviceWorker
+	.register('service-worker.js')
+	.then(async (serviceWorker) => {
+		let subscription = await serviceWorker.pushManager.getSubscription()
+
+		if (!subscription) {
+			const publicKeyResponse = await api.get('/push/public_key')
+
+			subscription = await serviceWorker.pushManager.subscribe({
+				userVisibleOnly: true,
+				applicationServerKey: publicKeyResponse.data.publicKey
+			})
+		}
+
+		await api.post('/push/register', {
+			subscription
+		})
+
+		await api.post('/push/send', {
+			subscription
+		})
+	})
 
 export function App() {
 	return (
