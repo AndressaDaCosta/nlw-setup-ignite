@@ -1,9 +1,14 @@
-import './styles/global.css';
-import './lib/dayjs';
-import { Header } from './components/Header';
-import { SummaryTable } from './components/SummaryTable';
+import './styles/global.css'
+import './lib/dayjs'
+import { Header } from './components/Header'
+import { SummaryTable } from './components/SummaryTable'
 
-// import { Habit } from "./components/Habit"
+// Local Notification => Scheduling/ App fechado  (services workers)
+window.Notification.requestPermission((Permission) => {
+	new window.Notification('Habits', {
+		body: 'Texto'
+	})
+})
 
 export function App() {
 	return (
@@ -13,5 +18,5 @@ export function App() {
 				<SummaryTable />
 			</div>
 		</div>
-	);
+	)
 }
